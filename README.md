@@ -1,95 +1,108 @@
-# TecMise — Sistema Completo de Gestão Escolar
+TecMise — Dashboard de Gestão Escolar (Frontend)
 
-Bem-vindo ao **TecMise**, uma solução moderna de cadastro e gestão escolar desenvolvida em **Go**, **PostgreSQL** e **Vue 3/Nuxt**.
+O TecMise é um sistema moderno de gestão escolar, desenvolvido em Vue 3 + Nuxt 3, integrado a uma API RESTful em Go com PostgreSQL.
+O frontend é responsivo, seguro e fácil de usar, oferecendo recursos de CRUD, autenticação e personalização de perfis.
 
----
+✨ Funcionalidades
 
-## ✨ O que é o TecMise?
+🔑 Login seguro por usuário
 
-- Plataforma web para cadastro, edição, exclusão e consulta de estudantes, anos, turmas e perfis de usuário.
-- Cada usuário só vê e gerencia seus próprios dados.
-- Design responsivo, seguro e fácil de usar.
-- Stack 100% open source.
+🧑‍🎓 Gestão de Estudantes (cadastro, edição, listagem, exclusão)
 
----
+📚 Gerenciamento de Anos/Turmas (CRUD completo)
 
-## 🚀 Tecnologias Utilizadas
+🖼️ Upload de avatar/foto com preview imediato
 
-- **Frontend:** Vue 3 + Nuxt
-- **Backend:** Go (Golang)
-- **Banco de Dados:** PostgreSQL
-- **Gerenciamento:** pgAdmin (sugestão)
-- **Estilo:** TailwindCSS
+✅ Validação de dados (nome, CPF, e-mail etc.)
 
----
+📱 Responsividade total (desktop, tablet e mobile)
 
-## 📦 Organização do Projeto
+🔒 Dados isolados por usuário (multicontas seguras)
 
-```text
-/
-├── backend/         # Código do backend Go (API, lógica, integração com Postgres)
-├── frontend/        # Frontend Vue/Nuxt (dashboard, login, UX/UI)
-├── schema.sql       # Script completo para criação das tabelas
-├── README.md        # Este arquivo
-⚡ Setup Rápido
-Clone o repositório:
+🚀 Pronto para deploy em produção
 
-bash
-Copiar
-Editar
-git clone https://github.com/seuusuario/tecmise.git
-cd tecmise
-Configure o banco de dados (PostgreSQL):
+🚀 Pré-requisitos
 
-Instale o PostgreSQL e crie o banco clientes_db.
+Node.js ^22.17.1
 
-Execute o script schema.sql no pgAdmin ou psql.
+npm ^10.9.2
 
-Configure o backend (Go):
+Nuxt CLI 3.27.0 (opcional, recomendado rodar via npm scripts)
 
-Acesse a pasta /backend
+⚠️ O backend em Go precisa estar rodando em http://localhost:8080 ou a URL configurada via .env.
 
-Ajuste a string de conexão conforme seu ambiente.
+⚡ Instalação Rápida
+1. Clone o repositório
+[git clone https://github.com/seuusuario/tecmise.git](https://github.com/LuizRuan/desafio-tecmise)
+cd tecmise/frontend
 
-Instale as dependências:
-
-bash
-Copiar
-Editar
-go mod tidy
-Inicie o backend:
-
-bash
-Copiar
-Editar
-go run .
-O backend roda em http://localhost:8080
-
-Configure o frontend (Vue/Nuxt):
-
-Acesse a pasta /frontend
-
-Instale as dependências:
-
-bash
-Copiar
-Editar
+2. Instale as dependências
 npm install
-Rode o frontend:
 
-bash
-Copiar
-Editar
+3. Configure as variáveis de ambiente
+
+Crie ou edite o arquivo .env na raiz do frontend:
+
+NUXT_PUBLIC_API_URL=http://localhost:8080
+
+4. Execute em modo desenvolvimento
 npm run dev
-O frontend roda em http://localhost:3000
 
-🔗 Documentação Detalhada
-Setup e comandos Backend Go
 
-Setup e comandos Frontend Nuxt
+👉 Acesse: http://localhost:3000
 
-Estrutura do Banco de Dados (schema.sql)
+🛠️ Scripts principais
 
-👨‍💻 Contato e Suporte
-Para dúvidas, sugestões ou bugs, contate a equipe TecMise.
-Este projeto é open-source e pode ser adaptado para novas necessidades!
+npm run dev → Inicia em modo desenvolvimento
+
+npm run build → Gera a versão de produção
+
+npm run preview → Roda localmente o build de produção
+
+📁 Estrutura de Pastas
+frontend/
+├── components/        # Componentes Vue (modais, tabelas, inputs)
+├── pages/             # Páginas Nuxt (login, dashboard, etc)
+├── plugins/           # Plugins Nuxt opcionais
+├── public/            # Arquivos estáticos (favicons, imagens)
+├── nuxt.config.ts     # Configuração principal do Nuxt
+├── package.json       # Dependências e scripts
+└── ...
+
+🌎 Variáveis de Ambiente
+Variável	Descrição	Exemplo
+NUXT_PUBLIC_API_URL	URL da API backend (Go)	http://localhost:8080
+🐞 Troubleshooting
+
+❌ Erro ao instalar dependências
+→ Verifique se está usando Node 22+ e npm 10+.
+→ Sempre use npm install (não use yarn).
+
+🔗 Erro de CORS / API não responde
+→ Confirme se o backend Go está rodando e configurado para aceitar o frontend.
+
+⚠️ Problemas no build de produção
+→ Certifique-se de definir corretamente as variáveis .env no ambiente de deploy (Vercel, Netlify, Render, etc).
+
+💡 Dicas & Recomendações
+
+Sempre iniciar o backend antes do frontend.
+
+Para deploy em produção, configure as variáveis .env corretas.
+
+Navegadores modernos oferecem a melhor experiência de uso.
+
+👥 Contribuição & Contato
+
+Contribuições são muito bem-vindas 🚀
+
+Abra uma issue para reportar bugs ou sugerir melhorias.
+
+Faça um pull request para contribuir diretamente.
+
+Autor: Luiz Ruan 
+
+
+📜 Licença
+
+Este projeto está sob a licença MIT — veja LICENSE.
